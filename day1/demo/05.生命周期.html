@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+        <div id="app">
+            {{msg}}
+            <button onclick="change()"> 更新 </button>
+            <button onclick="destroy()"> 销毁 </button>
+            <button id="btn">点啊</button>
+        </div>
+    </body>
+    <script>
+        // 在实例创建后将调用 created 钩子函数
+    //   new Vue({
+    //     data: {
+    //       a: 1
+    //     },
+    //     created: function () {
+    //       // `this` 指向 vm 实例
+    //       console.log('a is: ' + this.a)
+    //     }
+    //   })
+      // => "a is: 1"
+       
+       let vm=new Vue({
+           el:'#app',
+           data:{
+               msg:'nihao'
+           },
+           beforeCreate(){
+               alert("实例创建前")
+           },
+           created(){
+               alert("实例已经创建完成")
+           },
+           beforeMount(){
+               alert("实例挂载前")
+           },
+           mounted(){
+               alert("实例已经挂载完成")
+               $("#btn").click(function(){
+                   alert(123);
+               })
+           },
+           beforeUpdate(){
+               alert("实例更新前")
+           },
+           updated(){
+               alert("实例已经更新完成")
+           },
+           beforeDestroy(){
+               alert("实例销毁前")
+           },
+           destroyed(){
+               alert("实例销毁")
+           }
+       })
+       function change(){
+           vm.msg="haohao";
+       }
+       function destroy(){
+           vm.$destroy();
+       }
+    </script>
+</html>

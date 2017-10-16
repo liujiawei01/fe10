@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="app">
+            {{arr}}
+          <button v-on:click="show">点击</button>
+          <button v-on:mouseover="show">鼠标经过</button>
+          <button v-on:dblclick="show">双击</button>
+          <button @click="add(555)">add</button>
+        </div>
+    </body>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+               arr:['12','34','35']
+            },
+            //
+            methods:{
+                show:function(){
+                    console.log("调用了show方法")
+                },
+                add:function(data){
+                    this.arr.push(data)
+                }
+            }
+
+        })
+    </script>
+</html>

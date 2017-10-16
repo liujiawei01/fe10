@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="app">
+            {{num>5? "yes":"no"}}
+        </div>
+        <div v-text="tpl"></div>
+        <div v-html="tpl"></div>
+    </body>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+              name:"zhang",
+              num:10,
+              tpl:"<h1> hello san </h1>"
+            }
+        })
+    </script>
+</html>

@@ -8,9 +8,11 @@
 	<body>
         <div id="app">
             {{num>5? "yes":"no"}}
+            <div v-text="tpl"></div>
+            <div v-html="tpl"></div>
+            <input type="text" v-model='num'>{{num}}
         </div>
-        <div v-text="tpl"></div>
-        <div v-html="tpl"></div>
+       
     </body>
     <script>
         let vm=new Vue({

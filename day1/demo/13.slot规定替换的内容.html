@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="box">
+             <stark>
+                    <div slot="two">
+                            我想替换第二个位置
+                        </div>
+                        <div slot="one">
+                            我想替换第一个位置
+                        </div>
+                        <div slot="three">
+                            我想替换第三个位置
+                        </div>
+                        <div>
+                            我不是一个slot标签,哈哈，你咬我啊
+                        </div>
+             </stark>
+        </div>
+    </body>
+    <script>
+        Vue.component('stark',{
+            //模板的第三种写法：模板字符串
+            template:`
+             <div>
+                <span>首页</span>
+                <slot name='one'><p>第一个位置</p></slot> 
+                <slot name='three'><p>第三个位置</p></slot> 
+                <slot name='two'><p>第二个位置</p></slot> 
+                <slot>我就咬你</slot>
+            </div>
+
+            `
+        })
+        let vm= new Vue({
+            el:"#box"
+        })
+
+    </script>
+</html>

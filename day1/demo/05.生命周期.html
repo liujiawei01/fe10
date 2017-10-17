@@ -27,6 +27,10 @@
     //   })
       // => "a is: 1"
        
+    // 在没有创建实例之前就执行了，是无效的
+    // $("#btn").click(function() {
+    //     alert("我在哪用才合适呢")
+    // })
        let vm=new Vue({
            el:'#app',
            data:{
@@ -37,12 +41,17 @@
            },
            created(){
                alert("实例已经创建完成")
+                // 此时dom还没有挂载 在这里是无效的
+                // $("#btn").click(function() {
+                //     alert("我在哪用才合适呢")
+                // })
            },
            beforeMount(){
                alert("实例挂载前")
            },
            mounted(){
                alert("实例已经挂载完成")
+              //在实例挂载完成后才能触发点击事件
                $("#btn").click(function(){
                    alert(123);
                })

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="app">
+          <div v-if="seen">我被显示了 </div>
+          <div :id="id">id的值为{{id}}</div>
+          <img src='https://cn.vuejs.org/images/logo.png' alt="">
+          <!-- 绑定一个属性
+                
+          <!-- 缩写 -->
+          <!-- <img : src="imgs" alt=""> -->
+        
+        </div>
+        
+    </body>
+    <script>
+        let data={
+            msg:'nihao',
+            seen:true,
+            id:8000,
+            imgs:'https://cn.vuejs.org/images/logo.png'
+
+        }
+        let vm=new Vue({
+            el:'#app',
+            data:data
+        })
+    </script>
+</html>

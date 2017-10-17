@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+        <style>
+            .fontsize{
+                font-size: 50px;
+            }
+            .red{
+               color: red;
+            }
+        </style>
+	</head>
+	<body>
+        <div id="app">
+          <span class="fontsize":class="{red:addclass}">
+                <!-- :class="{red:addclass}  缩写添加样式-->
+              Halloween
+          </span>
+        </div>
+    </body>
+    <script>
+        let vm=new Vue({
+            el:"#app",
+            data:{
+                addclass:true
+            }
+
+        })
+    </script>
+</html>

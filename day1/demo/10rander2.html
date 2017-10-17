@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="box">
+           
+        </div>
+    </body>
+    <script>
+        let vm=new Vue({
+            el:"#box",
+            data:{},
+            render(createElement){
+                return createElement(
+                    "ul", { 
+                        class:{
+                            bg:true
+                        },
+                        style:{
+                           fontSize:"30px"
+                        },
+                        attrs:{
+                            stark:'zhangsan'//给元素添加自定义属性
+                        }
+                    },   [
+                            createElement('li',2),
+                            createElement('li',2),
+                            createElement('li',2)
+
+                        ]
+                  
+                )
+            }
+
+            
+
+        })
+    </script>
+</html>

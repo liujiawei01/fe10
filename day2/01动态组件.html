@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <script src="https://cdn.bootcss.com/vue/2.4.4/vue.js"></script>
+	</head>
+	<body>
+        <div id="box">
+            <!-- 按钮控制组件切换，改变stark的值 -->
+            <input type="button" @click="stark='hello'" value="hello">
+            <input type="button" @click="stark='word'" value="word">
+           <component  v-bind:is='stark'>
+               <!-- 识别动态切换 -->
+           </component> 
+        </div>
+    </body>
+    <script>
+        let vm=new Vue({
+            el:"#box",
+            data:{
+               stark:'hello'
+            } ,
+            components:{
+                'hello':{
+                    template:'<h2>我是hello组件</h2>'
+                },
+                'word':{
+                    template:'<h2>我是word组件</h2>'
+                }
+            }
+              
+        })
+        vm.name="xiaoliu";
+    </script>
+</html>
